@@ -56,7 +56,7 @@ public class LoginServlet extends HttpServlet
                     //Encrypt user token identifier using your encryption class /you will have to create your own encryption class/
                     Digester digester = new Digester();
                     String encryptedToken = digester.doDigest(userToken);
-                    //Store encrypted token along with user info
+                    //Call method to store encrypted token along with user info
                     boolean saveUserToken = UserDAO.storeUserSecurityToken(user.getEmail(), userToken, encryptedToken);
                     //Store encrypted token in a cookie and encode value so as to remove white spaces
                     Cookie userCookie = new Cookie("userToken", URLEncoder.encode(userToken, "UTF-8"));
@@ -91,7 +91,7 @@ public class LoginServlet extends HttpServlet
                             //Encrypt token
                             Digester digester = new Digester();
                             String encryptedToken = digester.doDigest(userToken);
-                            //Store encrypted token along with user info
+                            //Call method to store encrypted token along with user info
                             boolean saveUserToken = UserDAO.storeUserSecurityToken(user.getEmail(), userToken, encryptedToken);
                             //Store encrypted token in a cookie and encode value so as to remove white spaces
                             Cookie userCookie = new Cookie("userToken", URLEncoder.encode(userToken, "UTF-8"));
@@ -119,7 +119,7 @@ public class LoginServlet extends HttpServlet
                             //Encrypt token
                             Digester digester = new Digester();
                             String encryptedToken = digester.doDigest(userToken);
-                            //Store encrypted token along with user info
+                            //Call method to store encrypted token along with user info
                             boolean saveUserToken = UserDAO.storeUserSecurityToken(user.getEmail(), userToken, encryptedToken);
                             //Store encrypted token in a cookie and encode value so as to remove white spaces
                             Cookie userCookie = new Cookie("userToken", URLEncoder.encode(userToken, "UTF-8"));
